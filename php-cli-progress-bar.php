@@ -1,13 +1,13 @@
 <?php
-function pgbar($a=1,$b=100,$fill=true){
+function pgbar($a=1,$b=100,$fill=true,$barsize=20){
 echo " [";
-$prct = round(($a/$b)*20);
+$prct = round(($a/$b)*$barsize);
 if ($fill){
-$w=$prct;
-$y=20-$prct;
-}else{
-$w=20-$prct;
+$w=$barsize-$prct;
 $y=$prct;
+}else{
+$w=$prct;
+$y=$barsize-$prct;
 }
 for ($z=0;$z<$y;$z++){
         echo "#";
